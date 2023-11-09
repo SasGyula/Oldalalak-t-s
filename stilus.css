@@ -1,0 +1,110 @@
+* {
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+body{
+    background-image: url(kepek/hatter.jpg);
+    color: white;
+}
+main {
+    display: grid;
+    grid-template-areas: 
+    "h h h h h"
+    "n n n n n"
+    "b a a a j"
+    "f f f f f"
+    ;
+}
+header, nav, article, footer, aside{
+    border: 1px solid rgb(255, 255, 255);
+    padding: 10px;
+}
+
+header {
+    grid-area: h;
+}
+nav {
+    grid-area: n;
+}
+aside#bal {
+    grid-area: b;
+}
+aside#jobb {
+    grid-area: j;
+}
+article {
+    grid-area: a;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    padding: 5px;
+}
+footer{
+    grid-area: f;
+}
+nav ul{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    list-style: none;
+    text-align: left;
+    background-color: gray;
+
+
+}
+nav li{
+    background-color: rgba(0, 0, 0, 0.137);
+    padding: 5px;
+}
+nav a {
+    text-decoration: none;
+    color: yellow;
+    padding: 15px;
+}
+article img {
+    width: 100%;
+    
+}
+
+
+@media only screen and (max-width: 800px){
+    body, main{
+        width: 100%
+    }
+    main {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "h h"
+            "n n"
+            "b b"
+            "j j"
+            "a a"
+            "f f"
+        ;
+    }
+    article {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+/*mobil nézet reszponzivitás kialakítáés*/
+@media only screen and (max-width: 600px){
+    main {
+        font-size: 12px;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "h"
+            "n"
+            "a"
+            "a"
+            "a"
+            "b"
+            "j"
+            "f"
+        ;
+    }
+    article {
+        grid-template-columns: 1fr;
+    }
+
+}
